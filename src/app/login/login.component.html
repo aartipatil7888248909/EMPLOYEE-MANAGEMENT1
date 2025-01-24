@@ -1,0 +1,58 @@
+<div class="background-image">
+  <div class="login-container">
+    <div class="login-card p-card">
+      <h2>Login</h2>
+      <!-- Form with ngForm -->
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+        <!-- Username Field -->
+        <div class="login-field">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            pInputText
+            [(ngModel)]="username"
+            required
+            #usernameRef="ngModel"
+            placeholder="Enter your username"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="login-field password">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            pInputText
+            [(ngModel)]="password"
+            required
+            #passwordRef="ngModel"
+            placeholder="Enter your password"
+          />
+          
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          pButton
+          type="submit"
+          label="Login"
+          class="p-button-primary"
+          
+        >
+         
+        </button>
+
+        <p class="redirect-text">
+          Don't have an account? <a routerLink="/register">Register</a>
+        </p>
+        <p class="redirect-text">
+          Forgot your password? <a routerLink="/forgot-password">Reset Password</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

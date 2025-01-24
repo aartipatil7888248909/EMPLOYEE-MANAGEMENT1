@@ -1,0 +1,140 @@
+/* Container for the Manager User Form */
+.manager-user-container {
+  padding: 20px;
+  background-color: #f0f8ff; /* Light Sky Blue background */
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h2 {
+  font-size: 24px;
+  color: #3498db; /* Blue color for the header */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for each form field */
+.form-field {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input styling */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3498db; /* Blue border on focus */
+  outline: none;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button */
+.submit-button {
+  background-color: #27ae60; /* Green for Add User button */
+  color: white;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
+}
+
+/* Edit button */
+.edit-button {
+  background-color: #f39c12; /* Yellow for Edit button */
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #f1c40f; /* Lighter yellow on hover */
+}
+
+/* Delete button */
+.delete-button {
+  background-color: #e74c3c; /* Red for Delete button */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Styling for the employee table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+}
+
+table td {
+  font-size: 14px;
+  color: #555;
+}
+
+table tr:hover {
+  background-color: #ecf0f1; /* Light gray hover effect */
+}
+
+/* Buttons inside the table */
+table button {
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Edit button inside table */
+table button.edit-button {
+  background-color: #f39c12;
+}
+
+table button.edit-button:hover {
+  background-color: #f1c40f; /* Lighter yellow on hover */
+}
+
+/* Delete button inside table */
+table button.delete-button {
+  background-color: #e74c3c;
+}
+
+table button.delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}

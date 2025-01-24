@@ -1,0 +1,98 @@
+<div class="registration-container">
+  <div class="registration-card">
+    <h2>Registration</h2>
+    <form #registrationForm="ngForm" (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          [(ngModel)]="firstName"
+          required
+          #firstNameRef="ngModel"
+          placeholder="Enter your first name"
+        />
+        <div *ngIf="firstNameRef.invalid && firstNameRef.touched" class="error">
+          First Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          [(ngModel)]="lastName"
+          required
+          #lastNameRef="ngModel"
+          placeholder="Enter your last name"
+        />
+        <div *ngIf="lastNameRef.invalid && lastNameRef.touched" class="error">
+          Last Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+          #usernameRef="ngModel"
+          placeholder="Enter your username"
+        />
+        <div *ngIf="usernameRef.invalid && usernameRef.touched" class="error">
+          Username is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="description"
+          required
+          #descriptionRef="ngModel"
+          placeholder="Enter a short description"
+        ></textarea>
+        <div *ngIf="descriptionRef.invalid && descriptionRef.touched" class="error">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          #passwordRef="ngModel"
+          placeholder="Enter your password"
+        />
+        <div *ngIf="passwordRef.invalid && passwordRef.touched" class="error">
+          Password is required.
+        </div>
+      </div>
+
+      <button type="submit" class="register-btn">
+        Register
+      </button>
+
+      <!-- Custom error message when form is invalid and touched -->
+      <div *ngIf="registrationForm.submitted && registrationForm.invalid" class="error">
+        Please fill in all required fields.
+      </div>
+
+      <p class="redirect-text">
+        Already have an account? <a routerLink="/login">Login</a>
+      </p>
+    </form>
+  </div>
+</div>

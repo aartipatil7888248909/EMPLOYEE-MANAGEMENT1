@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard</title>
+
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- PrimeNG CSS for PrimeNG components -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/4.1.0/primeicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/primeng/12.0.0/primeng.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+
+        /* Left sidebar container */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #3498db;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-symbol {
+            font-size: 30px;
+            color: black;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Sidebar Item */
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .sidebar-item i {
+            font-size: 30px;
+            margin-right: 10px;
+            color: black;
+        }
+
+        /* Logout section */
+        .logout-container {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .logout-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: red;
+        }
+
+        /* Content section */
+        .content {
+            flex-grow: 1;
+            width: 100%;
+            padding-left: 30px;
+            padding-top: 20px;
+        }
+
+        /* User Details Text */
+        .user-details {
+            font-size: 22px;
+            font-weight: bold;
+            color: red;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        /* Header Container for Manage Employees */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        /* Manage Employees Box */
+        .manage-employees-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 1000px;
+            background-color: #bdc3c7;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .manage-employees-text {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* Add New Employee Button */
+        .add-new-employee {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #27ae60; /* Green background */
+            color: white; /* White text */
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* White circle with minus symbol on left side of the button */
+        .add-new-employee .minus-symbol {
+            font-size: 20px;
+            color: #27ae60; /* Green color for minus symbol */
+            background-color: #fff; /* White circle */
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px; /* Space between the circle and text */
+            border: 2px solid #27ae60; /* Green border for circle */
+        }
+
+        /* Red box inside the employee manager box */
+        .manage-employees-box .red-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .manage-employees-box .red-box i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <div class="logo-symbol">
+                <span class="v-shape">V</span>
+            </div>
+            <span class="logo-text">Logo</span>
+        </div>
+
+        <!-- Dashboard Section -->
+        <p-button icon="fas fa-home" label="Dashboard" class="sidebar-item"></p-button>
+
+        <!-- Manager User Section -->
+        <p-button icon="fas fa-star" label="Manager User" class="sidebar-item" (click)="showManagerUserForm()"></p-button> 
+
+        <!-- Logout Section -->
+        <div class="logout-container">
+            <p-button icon="pi pi-arrow-up" label="Logout" class="logout-button" (click)="logout()"></p-button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <span class="user-details">User Details</span>
+
+        <!-- Header Container -->
+        <div class="header-container">
+            <div class="manage-employees-box">
+                <span class="manage-employees-text">Manage Employees</span>
+
+                <!-- Red box with minus circle and delete text -->
+                
+                
+
+                <!-- Add New Employee Button with minus symbol -->
+                <p-button icon="pi pi-plus" label="Add New Employee" class="add-new-employee" (click)="addEmployee()"></p-button>
+            </div>
+        </div>
+
+        <!-- User Table Section -->
+        <p-table [value]="dataservice.recordDetails" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 50px;"></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-record>
+                <tr>
+                    <td class="small-blank-box"></td>
+                    <td>{{ record.firstName }}</td>
+                    <td>{{ record.lastName }}</td>
+                    <td>{{ record.email }}</td>
+                    <td>{{ record.phone }}</td>
+                    <td>{{ record.address }}</td>
+                    <td class="action-buttons">
+                        <!-- Edit Button -->
+                        <p-button icon="pi pi-pencil" class="p-button-warning" (click)="editEmployee(record)"></p-button>
+                        <!-- Delete Button -->
+                        <p-button icon="pi pi-trash" class="p-button-danger" (click)="deleteEmployee(record.id)"></p-button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</body>
+</html>

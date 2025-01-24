@@ -1,0 +1,70 @@
+/* General Form Container */
+.form-container {
+  max-width: 600px;
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Employee Form Card */
+.employee-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields and Labels */
+.p-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.p-field input, .p-field textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.p-field input:focus, .p-field textarea:focus {
+  border-color: #42a5f5;
+  outline: none;
+  box-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
+}
+
+/* Error Message Styling */
+
+
+/* Save Button */
+.p-button-success {
+  background-color: #42a5f5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.p-button-success:hover {
+  background-color: #1e88e5;
+}
