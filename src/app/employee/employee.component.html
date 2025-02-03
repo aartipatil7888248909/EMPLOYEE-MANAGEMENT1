@@ -1,66 +1,78 @@
-<div class="form-container">
-  <p-toast></p-toast> <!-- Toast for notifications -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="employee.component.css">
+</head>
+<body>
+    <div class="form-container">
+        <p-toast></p-toast> <!-- PrimeNG Toast for Notifications -->
+        
+        <p-card header="Employee Form" class="form-card">
+            <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+                <div class="p-fluid">
+                    
+                    <!-- First Name -->
+                    <div class="p-field">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" pInputText formControlName="firstName" />
+                        <small *ngIf="employeeForm.controls['firstName'].invalid && employeeForm.controls['firstName'].touched" class="p-error">
+                           
+                        </small>
+                    </div>
 
-  <p-card header="Employee Form" styleClass="employee-card">
-    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-      <div class="p-fluid">
+                    <!-- Last Name -->
+                    <div class="p-field">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" pInputText formControlName="lastName" />
+                        <small *ngIf="employeeForm.controls['lastName'].invalid && employeeForm.controls['lastName'].touched" class="p-error">
+                           
+                        </small>
+                    </div>
 
-        <!-- First Name Field -->
-        <div class="p-field">
-          <label for="firstName">First Name</label>
-          <input id="firstName" type="text" pInputText formControlName="firstName" />
-          <small *ngIf="employeeForm.controls['firstName'].invalid && employeeForm.controls['firstName'].touched" class="p-error">
-           
-          </small>
-        </div>
+                    <!-- Email -->
+                    <div class="p-field">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" pInputText formControlName="email" />
+                        <small *ngIf="employeeForm.controls['email'].hasError('required') && employeeForm.controls['email'].touched" class="p-error">
+                           
+                        </small>
+                        <small *ngIf="employeeForm.controls['email'].hasError('email') && employeeForm.controls['email'].touched" class="p-error">
+                           
+                        </small>
+                    </div>
 
-        <!-- Last Name Field -->
-        <div class="p-field">
-          <label for="lastName">Last Name</label>
-          <input id="lastName" type="text" pInputText formControlName="lastName" />
-          <small *ngIf="employeeForm.controls['lastName'].invalid && employeeForm.controls['lastName'].touched" class="p-error">
-          
-          </small>
-        </div>
+                    <!-- Phone -->
+                    <div class="p-field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="text" pInputText formControlName="phone" />
+                        <small *ngIf="employeeForm.controls['phone'].hasError('required') && employeeForm.controls['phone'].touched" class="p-error">
+                           
+                        </small>
+                        <small *ngIf="employeeForm.controls['phone'].hasError('pattern') && employeeForm.controls['phone'].touched" class="p-error">
+                            
+                        </small>
+                    </div>
 
-        <!-- Email Field -->
-        <div class="p-field">
-          <label for="email">Email</label>
-          <input id="email" type="email" pInputText formControlName="email" />
-          <small *ngIf="employeeForm.controls['email'].hasError('required') && employeeForm.controls['email'].touched" class="p-error">
-            
-          </small>
-          <small *ngIf="employeeForm.controls['email'].hasError('email') && employeeForm.controls['email'].touched" class="p-error">
-            
-          </small>
-        </div>
+                    <!-- Address -->
+                    <div class="p-field">
+                        <label for="address">Address</label>
+                        <textarea id="address" pInputTextarea formControlName="address"></textarea>
+                        <small *ngIf="employeeForm.controls['address'].invalid && employeeForm.controls['address'].touched" class="p-error">
+                          
+                        </small>
+                    </div>
 
-        <!-- Phone Field -->
-        <div class="p-field">
-          <label for="phone">Phone</label>
-          <input id="phone" type="text" pInputText formControlName="phone" />
-          <small *ngIf="employeeForm.controls['phone'].hasError('required') && employeeForm.controls['phone'].touched" class="p-error">
-           
-          </small>
-          <small *ngIf="employeeForm.controls['phone'].hasError('pattern') && employeeForm.controls['phone'].touched" class="p-error">
-            
-          </small>
-        </div>
+                    <!-- Submit Button -->
+                    <div class="p-field">
+                        <button pButton type="submit" label="Add Employee" class="p-button-success"></button>
+                    </div>
 
-        <!-- Address Field -->
-        <div class="p-field">
-          <label for="address">Address</label>
-          <textarea id="address" pInputTextarea formControlName="address"></textarea>
-          <small *ngIf="employeeForm.controls['address'].invalid && employeeForm.controls['address'].touched" class="p-error">
-           
-          </small>
-        </div>
-
-        <!-- Save Button -->
-        <div class="p-field">
-          <button pButton type="submit" label="Add Employee" class="p-button-success"></button>
-        </div>
-      </div>
-    </form>
-  </p-card>
-</div>
+                </div>
+            </form>
+        </p-card>
+    </div>
+</body>
+</html>
